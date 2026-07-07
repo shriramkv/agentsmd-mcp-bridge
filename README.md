@@ -101,7 +101,7 @@ and asserts the result is valid Python.
 
 ## Examples
 
-See [`examples/`](examples/): a sample `AGENTS.md`, the MCP server generated from
+See - a sample `AGENTS.md`, the MCP server generated from
 it, a sample MCP manifest, and the `AGENTS.md` section generated from that.
 
 ## License
