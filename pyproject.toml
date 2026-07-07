@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentsmd-mcp-bridge"
+version = "0.1.0"
+description = "Bridge AGENTS.md and MCP: generate an MCP server from a repository's AGENTS.md, or an AGENTS.md section from an MCP tool manifest."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Shriram Kris Vasudevan" }]
+keywords = ["mcp", "model-context-protocol", "agents.md", "agentic-ai", "aaif", "codegen"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Code Generators",
+]
+dependencies = []
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.0.0"]
+dev = ["pytest>=7", "pytest-cov>=4", "ruff>=0.4"]
+
+[project.urls]
+Homepage = "https://github.com/shriramkv/agentsmd-mcp-bridge"
+Repository = "https://github.com/shriramkv/agentsmd-mcp-bridge"
+Issues = "https://github.com/shriramkv/agentsmd-mcp-bridge/issues"
+
+[project.scripts]
+agentsmd-mcp-bridge = "agentsmd_mcp_bridge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["agentsmd_mcp_bridge*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

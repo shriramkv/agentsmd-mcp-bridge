@@ -1,0 +1,8 @@
+{
+  "server": "example-web-service",
+  "tools": [
+    {"name": "search_docs", "description": "Search the project documentation.",
+     "inputSchema": {"type": "object", "properties": {"query": {"type": "string"}}, "required": ["query"]}},
+    {"name": "health", "description": "Return service health.", "inputSchema": {}}
+  ]
+}
